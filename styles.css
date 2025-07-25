@@ -23,7 +23,7 @@ a:hover {
 
 /* Header and Navigation */
 header {
-    background-color: #fff;
+    background-color: #1a4a4a;
     border-bottom: 1px solid #1a4a4a;
     padding: 0;
     position: sticky;
@@ -45,7 +45,7 @@ header {
     font-weight: normal;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #333;
+    color: #fff;
 }
 
 .logo h1 a {
@@ -66,7 +66,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #fff;
     font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -76,12 +76,12 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #2c5f5f;
-    border-bottom-color: #2c5f5f;
+    color: #a8d8d8;
+    border-bottom-color: #a8d8d8;
 }
 
 nav ul li a.active {
-    border-bottom-color: #333;
+    border-bottom-color: #fff;
 }
 
 /* Mobile menu toggle */
@@ -95,7 +95,7 @@ nav ul li a.active {
 .mobile-menu-toggle span {
     width: 25px;
     height: 3px;
-    background-color: #333;
+    background-color: #fff;
     margin: 3px 0;
     transition: 0.3s;
 }
