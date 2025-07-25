@@ -1,0 +1,340 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Global link styles */
+a {
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2c5f5f !important;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.logo h1 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul li a:hover {
+    color: #2c5f5f;
+    border-bottom-color: #2c5f5f;
+}
+
+nav ul li a.active {
+    border-bottom-color: #333;
+}
+
+/* Mobile menu toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* Bio section */
+.bio {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: flex-start;
+}
+
+.portrait {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.bio-text {
+    flex: 1;
+}
+
+.bio-text h2 {
+    font-size: 32px;
+    font-weight: normal;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.bio-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Sections */
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 25px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Books section */
+.books ul {
+    list-style: none;
+}
+
+.books ul li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.books ul li strong {
+    font-style: italic;
+}
+
+/* News section */
+.news ul {
+    list-style: none;
+}
+
+.news ul li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+    padding-left: 20px;
+    position: relative;
+}
+
+.news ul li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #666;
+}
+
+/* Contact section */
+.contact p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.contact a {
+    color: #333;
+    text-decoration: underline;
+}
+
+.contact a:hover {
+    color: #2c5f5f;
+}
+
+/* Footer */
+footer {
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+footer p {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Image hover effects */
+img {
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.portrait:hover {
+    transform: scale(1.03);
+}
+
+/* Book layout styles */
+.books img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 15px 20px;
+    }
+    
+    .logo h1 {
+        font-size: 24px;
+    }
+    
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        flex-direction: column;
+        gap: 0;
+        border-top: 1px solid #ddd;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav ul li {
+        border-bottom: 1px solid #eee;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 15px 20px;
+        border-bottom: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    .bio {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .portrait {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .bio-text h2 {
+        font-size: 28px;
+    }
+    
+    section h2 {
+        font-size: 24px;
+    }
+    
+    /* Responsive book layout */
+    .books div[style*="display: flex"] {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+    
+    .books div[style*="flex-shrink: 0"] {
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 10px 15px;
+    }
+    
+    .logo h1 {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+    
+    main {
+        padding: 15px;
+    }
+    
+    .bio-text h2 {
+        font-size: 24px;
+    }
+    
+    .bio-text p {
+        font-size: 16px;
+    }
+}
