@@ -51,10 +51,7 @@
             <div style="margin-bottom: 40px;">
                 <h3 style="font-size: 18px; margin-bottom: 15px;">Contact Form</h3>
                 
-                <form action="https://formspree.io/f/waltwhitmansbeard@gmail.com" method="POST" style="max-width: 600px;">
-                    <input type="hidden" name="_next" value="https://lindsay-wilson.github.io/contact.html">
-                    <input type="hidden" name="_subject" value="New contact form submission">
-                    <input type="hidden" name="_captcha" value="false">
+                <form id="contactForm" style="max-width: 600px;">
                     <div style="margin-bottom: 15px;">
                         <label for="name" style="display: block; margin-bottom: 5px; font-weight: bold;">Name:</label>
                         <input type="text" id="name" name="name" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
@@ -111,6 +108,37 @@
             const navMenu = document.getElementById('nav-menu');
             navMenu.classList.toggle('active');
         }
+
+        // Handle contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Create email content
+            const emailSubject = encodeURIComponent(`Website Contact: ${subject}`);
+            const emailBody = encodeURIComponent(`Name: ${name}
+Email: ${email}
+Subject: ${subject}
+
+Message:
+${message}
+
+---
+This message was sent via the contact form on lindsay-wilson.github.io`);
+            
+            // Create mailto link
+            const mailtoLink = `mailto:waltwhitmansbeard@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show confirmation message
+            alert('Your email client should now open with the message pre-filled. Please send the email to complete your contact request.');
+        });
     </script>
 </body>
 </html>
